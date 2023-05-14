@@ -1,0 +1,100 @@
+/* Useful mixins */
+/* Elements for which an animation should be played
+   when a link targetting them is clicked */
+/* Universal border-box fix (Keith Grant, CSS in depth, listing 3.5) */
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,600;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,600;1,400;1,600");
+*, ::before, ::after {
+  box-sizing: border-box; }
+
+/* Fonts */
+:root {
+  font-size: 1em; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "PT Serif", serif; }
+
+hr.abstracts {
+  margin-bottom: 3em;
+  margin-top: 4em;
+  width: 62%; }
+
+h1, h2, h3, h4, h5, h6, strong {
+  font-weight: 600; }
+
+* {
+  font-family: "PT Sans", sans-serif; }
+
+/* Make elements classed as hidden completely disappear */
+.hidden {
+  display: none; }
+
+/* Main content */
+body {
+  margin: 5vw; }
+
+/* Top of the article */
+h1 {
+  text-align: center; }
+
+/* Theorem headers have the normal font size despite being <h5> */
+.theorem-like h5 {
+  font-size: 1em;
+  font-style: normal; }
+
+/* Collapse margin between theorem header and body */
+.theorem-like h5 {
+  margin-bottom: 0em; }
+.theorem-like p:first-of-type {
+  margin-top: 0.3em; }
+
+/* Animate when referenced */
+/* Make theorem environments stand out */
+.theorem-like {
+  font-style: italic; }
+
+.authors {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 2.5em; }
+
+/* Abstract */
+.abstract:not(.frontpage) {
+  padding-left: 6vw;
+  padding-right: 6vw;
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto; }
+
+/* Sections */
+/* Links */
+a:link {
+  text-decoration: none; }
+
+/* Bibliography */
+.bibliography-item {
+  margin: 0.5em; }
+
+/* License footer */
+#license {
+  margin-top: 2em;
+  margin-bottom: 1em; }
+  #license img {
+    border-width: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em; }
+
+/* Class added by Javascript when the user clicks on a reference
+   (C.f. hightlight-bibitem.js) */
+.bibliography-item.__highlighted__ {
+  animation: boxed 2s; }
+
+/* Animations */
+@keyframes boxed {
+  0%, 100% {
+    outline: #fd6666 ridge 3px; } }
